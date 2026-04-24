@@ -42,3 +42,20 @@ The .describe() method provides a summary of numerical columns in the dataset, h
 7.How is the Correlation between the columns?
 
 The .corr() method in pandas is used to calculate the correlation between numerical columns in a dataset. It helps identify how strongly two variables are related to each other.
+## EDA using Univariate Analysis
+Data is categorized into numerical and categorical.Numerical data consists of values that are measurable and expressed as numbers while categorical data represents labels or categories.
+
+### Categorical data 
+We perform EDA of categorical data using countplot or using value_counts function from pandas library  and piechart.As we are performing univariate analysis ,we look each categorical data individually.
+Performing univariate analysis in titanic dataset.
+
+sns.countplot(dataset['Survived'])
+![Alt text](image-5.png)
+
+The bar chart shows that out of 891 passengers ,only 342 passengers was survived.
+
+dataset['Pclass'].value_counts().plot(kind = 'pie',autopct = '%.2f')
+
+![Alt text](image-6.png)
+
+The piechart illustrates that the most passengers was travelled in a pclass 3 while least passengers was travelled in a pclass 2.
