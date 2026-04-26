@@ -59,3 +59,34 @@ dataset['Pclass'].value_counts().plot(kind = 'pie',autopct = '%.2f')
 ![Alt text](image-6.png)
 
 The piechart illustrates that the most passengers was travelled in a pclass 3 while least passengers was travelled in a pclass 2.
+
+### Numerical data
+EDA of numerical data is performed by using different plot such as boxplot ,distplot, and histogram.
+
+#### Histogram
+It shows the distribution of data.
+
+import matplotlib.pyplot as plt
+plt.hist(dataset['Age'],bins = 10)
+![Alt text](image-7.png)
+
+The histogram illustrates that most passengers are between 20-40 years-majority are young adults.
+
+#### Distplot
+It is similar to histogram.
+
+sns.distplot(dataset['Fare'],bins=10)
+![Alt text](image-8.png)
+
+Most passengers paid low fares, but a few paid very high fares.
+Data is highly skewed,need log transformation for ML model.
+
+#### Boxplot
+It is used to smummarize numerical data and detect outliers.
+
+sns.boxplot(x=dataset['Fare'])
+plt.show()
+
+![Alt text](image-9.png)
+
+The box (IQR) is very close to the left side (near 0–50)-Most passengers paid low fares.
