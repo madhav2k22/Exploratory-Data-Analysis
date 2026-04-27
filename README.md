@@ -6,27 +6,38 @@ Understanding the dataset is the first and most important step in any machine le
 
 Firstly, we need to find how big our dataset is.For this, we use
  dataset.shape
-![Alt text](image.png)
-
+<p align="center">
+  <img src="image.png" width="500"/>
+</p>
+<br>
 This dataset contains 891 rows and 12 columns
   
 2.How does data look like ?
 
 Secondly, it is necessary to look the structure of the datset.For this,we use:
 dataset.head() or dataset.sample()
-![Alt text](image-1.png)
+<p align="center">
+  <img src="image-1.png" width="500"/>
+</p>
+<br>
 
 
 3.What is the data type of columns ?
 
  Now , we find the data type of columns using info().
- ![Alt text](image-2.png)
+<p align="center">
+  <img src="image-2.png" width="500"/>
+</p>
+<br>
  
 
 4.Are there any missing values ?
 
 we use isnull() to find out missing values in a  features.
-![Alt text](image-3.png)
+<p align="center">
+  <img src="image-3.png" width="500"/>
+</p>
+<br>
 
 As we see Cabin feature has highest missing values which is about 60 % so we removed  this features from the dataset
 
@@ -37,7 +48,10 @@ Duplicate values should be drop from the dataset for perfect model.First ,we det
 6.How does the data look mathematically?
 
 The .describe() method provides a summary of numerical columns in the dataset, helping you understand the distribution and key statistics of the data. 
-![Alt text](image-4.png)
+<p align="center">
+  <img src="image-4.png" width="500"/>
+</p>
+<br>
 
 7.How is the Correlation between the columns?
 
@@ -50,13 +64,19 @@ We perform EDA of categorical data using countplot or using value_counts functio
 Performing univariate analysis in titanic dataset.
 
 sns.countplot(dataset['Survived'])
-![Alt text](image-5.png)
+<p align="center">
+  <img src="image-5.png" width="500"/>
+</p>
+<br>
 
 The bar chart shows that out of 891 passengers ,only 342 passengers was survived.
 
 dataset['Pclass'].value_counts().plot(kind = 'pie',autopct = '%.2f')
 
-![Alt text](image-6.png)
+<p align="center">
+  <img src="image-6.png" width="500"/>
+</p>
+<br>
 
 The piechart illustrates that the most passengers was travelled in a pclass 3 while least passengers was travelled in a pclass 2.
 
@@ -68,7 +88,10 @@ It shows the distribution of data.
 
 import matplotlib.pyplot as plt
 plt.hist(dataset['Age'],bins = 10)
-![Alt text](image-7.png)
+<p align="center">
+  <img src="image-7.png" width="500"/>
+</p>
+<br>
 
 The histogram illustrates that most passengers are between 20-40 years-majority are young adults.
 
@@ -76,8 +99,10 @@ The histogram illustrates that most passengers are between 20-40 years-majority 
 It is similar to histogram.
 
 sns.distplot(dataset['Fare'],bins=10)
-![Alt text](image-8.png)
-
+<p align="center">
+  <img src="image-8.png" width="500"/>
+</p>
+<br>
 Most passengers paid low fares, but a few paid very high fares.
 Data is highly skewed,need log transformation for ML model.
 
@@ -87,6 +112,9 @@ It is used to smummarize numerical data and detect outliers.
 sns.boxplot(x=dataset['Fare'])
 plt.show()
 
-![Alt text](image-9.png)
+<p align="center">
+  <img src="image-9.png" width="500"/>
+</p>
+<br>
 
 The box (IQR) is very close to the left side (near 0–50)-Most passengers paid low fares.
